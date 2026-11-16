@@ -4,8 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
-  <meta http-equiv="refresh" content="1;url=https://rivers-likely-watches-examination.trycloudflare.com/">
-  <title>Mirny English — открываем портал</title>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <link rel="canonical" href="https://jstvq.github.io/mirny-english/">
+  <title>Mirny English — постоянная ссылка на портал</title>
   <style>
     :root {
       color-scheme: light;
@@ -76,7 +77,7 @@
 
     p {
       margin: 0 auto 24px;
-      max-width: 310px;
+      max-width: 330px;
       color: var(--muted);
       font-size: 14px;
       line-height: 1.65;
@@ -102,6 +103,44 @@
       transform: translateY(-1px);
     }
 
+    .copy {
+      display: inline-flex;
+      min-height: 38px;
+      align-items: center;
+      justify-content: center;
+      margin-left: 6px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: transparent;
+      color: var(--moss);
+      font: inherit;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .copy:hover { background: #f1ece1; }
+
+    .permanent {
+      margin: 22px auto 0;
+      padding: 12px 14px;
+      border: 1px dashed var(--line);
+      border-radius: 14px;
+      background: #fbf8f1;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.55;
+      max-width: 340px;
+    }
+
+    .permanent strong {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--ink);
+      font-size: 11px;
+    }
+
     .note {
       margin-top: 18px;
       color: var(--muted);
@@ -121,14 +160,32 @@
       </svg>
     </span>
     <span class="eyebrow">Mirny English</span>
-    <h1>Открываем портал</h1>
-    <p>Сейчас перенаправим вас в учебную библиотеку Mirny English. Если переход не начался, используйте кнопку ниже.</p>
-    <a class="button" id="open" href="https://rivers-likely-watches-examination.trycloudflare.com/">Открыть Mirny English</a>
-    <p class="note">Портал работает в демонстрационном режиме. Если ссылка не открылась,<br>попробуйте ещё раз через несколько секунд.</p>
+    <h1>Постоянная<br>ссылка</h1>
+    <p>Этот адрес не меняется. Внутри портала обновляется только подключение к учебной библиотеке.</p>
+
+    <a class="button" id="open" href="https://rivers-likely-watches-examination.trycloudflare.com/" target="_blank" rel="noopener">
+      Открыть Mirny English
+    </a>
+    <button class="copy" id="copy" type="button">Скопировать ссылку</button>
+
+    <div class="permanent">
+      <strong>Портал</strong>
+      https://jstvq.github.io/mirny-english/
+    </div>
+
+    <p class="note">Открывайте портал по этой ссылке. Если приложение не открылось,<br>попробуйте ещё раз через несколько секунд.</p>
   </main>
   <script>
-    const target = 'https://rivers-likely-watches-examination.trycloudflare.com/';
-    window.setTimeout(() => window.location.replace(target), 900);
+    const portalUrl = 'https://jstvq.github.io/mirny-english/';
+    const copyButton = document.getElementById('copy');
+    copyButton.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(portalUrl);
+        copyButton.textContent = 'Скопировано';
+      } catch {
+        copyButton.textContent = portalUrl;
+      }
+    });
   </script>
 </body>
 </html>
